@@ -15,15 +15,15 @@ st.caption("당신에게 딱 맞는 여행지를 AI가 추천해드립니다!")
 # API 키 설정
 def configure_genai():
     try:
-        if "GEMINI_API_KEY" in st.secrets:
+        if "GOOGLE_API_KEY" in st.secrets:
             genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
             return True
         else:
-            st.error("❌ API 키가 설정되지 않았습니다. `.streamlit/secrets.toml` 파일에 GEMINI_API_KEY를 추가하세요.")
+            st.error("❌ API 키가 설정되지 않았습니다. `.streamlit/secrets.toml` 파일에 GOOGLE_API_KEY를 추가하세요.")
             st.info("""
             ### 설정 방법:
             1. `.streamlit/secrets.toml` 파일 생성
-            2. 다음 내용 추가: `GEMINI_API_KEY = "your-api-key"`
+            2. 다음 내용 추가: `GOOGLE_API_KEY = "your-api-key"`
             """)
             return False
     except Exception as e:
