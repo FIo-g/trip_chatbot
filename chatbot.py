@@ -263,7 +263,7 @@ if st.session_state.user_profile:
         # AI 응답 생성
         if configure_genai():
             try:
-                model = genai.GenerativeModel('gemini-2.5-flash-exp')
+                model = genai.GenerativeModel('gemini-2.5-flash')
                 
                 # 대화 히스토리 구성
                 history = ""
